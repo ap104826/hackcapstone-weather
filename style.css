@@ -1,11 +1,20 @@
 body{
-    background-image: url('rainorshineicon.jpeg');
+    background-image: url('Color-blue.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     color: black;
+    text-align: center;
 }
 
 .clear {
-    background-image: url('sunny.jpeg');
+    background-image: url('Color-blue.jpeg');
+}
+
+img {
+   height:100px;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   width: 10%;
 }

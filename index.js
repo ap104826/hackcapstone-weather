@@ -24,21 +24,27 @@ function init(resultFromServer){
             break;
 
         case 'Clouds':
-            document.body.style.backgroundImage = 'url("cloudy.jpg")';
+            $('body').addClass('clouds');
             break;
         
         case 'Rain':
+            $('rain').addClass('rain');
+            break;
+
         case 'Drizzle':
+            $('drizzle').addClass('drizzle');
+            break;
+
         case 'Mist':
-                document.body.style.backgroundImage = 'url("rain.jpg")';
+                $('mist').addClass('mist');
                 break;
         
         case 'Thunderstorm':
-                document.body.style.backgroundImage = 'url("storm.jpg")';
+                $('thunderstorm').addClass('thunderstorm');
                 break;
 
         case 'Snow':
-                document.body.style.backgroundImage = 'url("snow.jpg")';
+                $('snow').addClass('snow');
                 break;
             
         default:
@@ -57,14 +63,14 @@ function init(resultFromServer){
     let resultDescription = resultFromServer.weather[0].description;
     weatherDescriptionHeader.text(resultDescription.charAt(0).toUpperCase() + resultDescription.slice(1));
 
-    temperatureElement.html(Math.floor(resultFromServer.main.temp) + '&#176');
+    temperatureElement.html('Temperature: ' + Math.floor(resultFromServer.main.temp) + '&#176');
     windspeedElement.html('Winds at ' + resultFromServer.wind.speed + 'm/s');
-    cityHeader.html(resultFromServer.name);
+    cityHeader.html('City: ' + resultFromServer.name);
     humidityElement.html('Humidity levels at '+ resultFromServer.main.humidity + '%');
 
 }
 
-$('#searchBtn').addEventListener('click', () => {
+$('#searchBtn').on('click', () => {
     let searchTerm = document.getElementById('searchInput').value;
     if(searchTerm) {
         searchWeather(searchTerm);

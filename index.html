@@ -8,12 +8,16 @@
     <body>
         <div id= "searchContainer">
             <h1 class="appTitle">Rain or Shine</h1>
-            <input class="searchControl" type="text" placeholder="City Name or ZipCode" id="searchInput">
-            <button class="searchControl" id="searchBtn">Search</button>
+            <form id="weatherForm">
+                <input class="searchControl" type="text" placeholder="City Name or ZipCode" id="searchInput" name="searchInput">
+                <input class="searchControl" id="searchBtn" type="submit" value="Search">
+            </form>
+            
         </div>
             <p id="weatherContainer">
                 <p id="weatherDescription">
                     <h3 id="cityHeader"></h3>
+                    <img class="weatherLogo hidden">
                     <span id="weatherMain">
                         <span id="temperature"></span>
                         <span id="weatherDescriptionHeader"></span>

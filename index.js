@@ -56,10 +56,10 @@ function init(resultFromServer){
     let humidityElement = $('#humidity');
     let windspeedElement = $('#windSpeed');
     let cityHeader = $('#cityHeader');
-    let weatherIcon = $('#documentIconImg');
+    let weatherIcon = $('.weatherLogo');
 
-    weatherIcon.src = 'http://openweathermap.org/img/w/' + resultFromServer.weather[0].icon + '.png';
-
+    weatherIcon.attr('src', `http://openweathermap.org/img/wn/${resultFromServer.weather[0].icon}@2x.png`);
+    weatherIcon.removeClass('hidden')
     let resultDescription = resultFromServer.weather[0].description;
     weatherDescriptionHeader.text(resultDescription.charAt(0).toUpperCase() + resultDescription.slice(1));
 
@@ -70,8 +70,9 @@ function init(resultFromServer){
 
 }
 
-$('#searchBtn').on('click', () => {
-    let searchTerm = document.getElementById('searchInput').value;
+$('#weatherForm').on('submit', (event) => {
+    event.preventDefault()
+    let searchTerm = $('#searchInput').val();
     if(searchTerm) {
         searchWeather(searchTerm);
     }

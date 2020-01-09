@@ -11,6 +11,10 @@ body{
     background-image: url('Color-blue.jpeg');
 }
 
+.hidden {
+    display: none;
+}
+
 img {
    height:100px;
    display: block;

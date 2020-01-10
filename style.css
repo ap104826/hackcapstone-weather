@@ -1,14 +1,12 @@
 body{
-    background-image: url('Color-blue.jpeg');
+    font-family:'Open Sans';
+    background-color: lightskyblue;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    color: black;
+    color: darkslategray;
     text-align: center;
-}
 
-.clear {
-    background-image: url('Color-blue.jpeg');
 }
 
 .hidden {
@@ -16,9 +14,23 @@ body{
 }
 
 img {
-   height:100px;
-   display: block;
-   margin-left: auto;
-   margin-right: auto;
+   height: auto;
+   margin: auto;
    width: 10%;
+}
+
+.weatherLogo {
+    width: 30%;
+}
+
+.weatherDescription {
+    border-style: solid;
+    border-width: thin;
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+#humidity {
+    margin-bottom: 10px;
 }

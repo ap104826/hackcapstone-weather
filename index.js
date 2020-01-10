@@ -18,55 +18,24 @@ function searchWeather(searchTerm) {
 }
 
 function init(resultFromServer){
-    switch(resultFromServer.weather[0].main) {
-        case 'Clear':
-            $('body').addClass('clear');
-            break;
 
-        case 'Clouds':
-            $('body').addClass('clouds');
-            break;
-        
-        case 'Rain':
-            $('rain').addClass('rain');
-            break;
-
-        case 'Drizzle':
-            $('drizzle').addClass('drizzle');
-            break;
-
-        case 'Mist':
-                $('mist').addClass('mist');
-                break;
-        
-        case 'Thunderstorm':
-                $('thunderstorm').addClass('thunderstorm');
-                break;
-
-        case 'Snow':
-                $('snow').addClass('snow');
-                break;
-            
-        default:
-                break;
-    }
-
+    let weatherDescription = $('.weatherDescription');
     let weatherDescriptionHeader = $('#weatherDescriptionHeader');
     let temperatureElement = $('#temperature');
     let humidityElement = $('#humidity');
     let windspeedElement = $('#windSpeed');
     let cityHeader = $('#cityHeader');
     let weatherIcon = $('.weatherLogo');
-
+    
     weatherIcon.attr('src', `http://openweathermap.org/img/wn/${resultFromServer.weather[0].icon}@2x.png`);
-    weatherIcon.removeClass('hidden')
+    weatherDescription.removeClass('hidden')
     let resultDescription = resultFromServer.weather[0].description;
     weatherDescriptionHeader.text(resultDescription.charAt(0).toUpperCase() + resultDescription.slice(1));
 
     temperatureElement.html('Temperature: ' + Math.floor(resultFromServer.main.temp) + '&#176');
-    windspeedElement.html('Winds at ' + resultFromServer.wind.speed + 'm/s');
-    cityHeader.html('City: ' + resultFromServer.name);
-    humidityElement.html('Humidity levels at '+ resultFromServer.main.humidity + '%');
+    windspeedElement.text('Winds at ' + resultFromServer.wind.speed + 'm/s');
+    cityHeader.text('City: ' + resultFromServer.name);
+    humidityElement.text('Humidity levels at '+ resultFromServer.main.humidity + '%');
 
 }
 

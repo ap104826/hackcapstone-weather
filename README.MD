@@ -1,5 +1,5 @@
 # Rain or Shine
-## A weather app where users can input zipcode or city and the API would pull up weather conditions such as temperature, wind speed and himidity for that city. 
+## A weather app where users can input zipcode or city and the API would pull up weather conditions such as temperature, wind speed and humidity for that city. 
 ## The technologies used for this app include HTML, CSS, JavaScript, jQuery, JavaScript fetch API. 
 
 <a href="https://ap104826.github.io/hackcapstone-weather/" target="_blank">https://ap104826.github.io/hackcapstone-weather/</a>

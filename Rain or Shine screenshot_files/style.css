@@ -1,0 +1,36 @@
+body{
+    font-family:'Open Sans';
+    background-color: lightskyblue;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: darkslategray;
+    text-align: center;
+
+}
+
+.hidden {
+    display: none;
+}
+
+img {
+   height: auto;
+   margin: auto;
+   width: 10%;
+}
+
+.weatherLogo {
+    width: 30%;
+}
+
+.weatherDescription {
+    border-style: solid;
+    border-width: thin;
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+#humidity {
+    margin-bottom: 10px;
+}

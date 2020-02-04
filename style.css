@@ -1,12 +1,17 @@
 body{
     font-family:'Open Sans';
-    background-color: lightskyblue;
+    background-color: lightsteelblue;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    color: darkslategray;
+    color: whitesmoke;
     text-align: center;
+    font-size: 30px;
+}
 
+.searchControl {
+    font-size: 22px;
+    border-color: aliceblue;
 }
 
 .hidden {
@@ -16,7 +21,7 @@ body{
 img {
    height: auto;
    margin: auto;
-   width: 10%;
+   width: 20%;
 }
 
 .weatherLogo {
@@ -33,4 +38,27 @@ img {
 
 #humidity {
     margin-bottom: 10px;
+}
+
+
+/* For iphone: */
+/* @media screen and (max-width : 320px){
+
+}  */
+
+
+/* For ipad: */
+@media only screen
+    and (min-width: 320px) 
+    and (max-width: 768px){
+    .searchControl {
+        font-size: 30px;
+        border-color: aliceblue;
+    }
+
+    img {
+        height: auto;
+        margin: auto;
+        width: 25%;
+     }
 }

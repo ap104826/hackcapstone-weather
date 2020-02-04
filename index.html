@@ -2,7 +2,7 @@
 <html lang = "en">
     <head>
         <title>Rain or Shine</title>
-        <img src="rainorshineicon.jpeg" alt="rainorshine">
+        <img src="rainorshineicon.jpeg" alt="rainorshine" >
         <link rel="stylesheet" href="style.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     </head>
@@ -10,13 +10,13 @@
         <div id= "searchContainer">
             <h1 class="appTitle">Rain or Shine</h1>
             <form id="weatherForm">
-                <input class="searchControl" type="text" placeholder="City Name or ZipCode" id="searchInput" name="searchInput">
+                <input class="searchControl" type="text" placeholder="City Name or ZipCode" id="searchInput" name="searchInput" aria-label="City Name or ZipCode">
                 <input class="searchControl" id="searchBtn" type="submit" value="Search">
             </form>
             
         </div>
         <div class="weatherDescription hidden">
-            <h3 id="cityHeader"></h3>
+            <h3 id="cityHeader">City</h3>
             <img class="weatherLogo" alt="logo">
             <hr width="40%">
             <span id="temperature"></span>

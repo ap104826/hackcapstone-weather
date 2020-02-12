@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html lang = "en">
     <head>
-        <title>Rain or Shine</title>
-        <img src="rainorshineicon.jpeg" alt="rainorshine" >
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
         <link rel="stylesheet" href="style.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" 
+            rel="stylesheet">
+            <title>Rain or Shine</title>
     </head>
     <body>
+        <img src="rainorshineicon.jpeg" alt="rainorshine" >
+        <!-- <div class="loader"></div> -->
         <div id= "searchContainer">
             <h1 class="appTitle">Rain or Shine</h1>
             <form id="weatherForm">
-                <input class="searchControl" type="text" placeholder="City Name or ZipCode" id="searchInput" name="searchInput" aria-label="City Name or ZipCode">
+                <input class="searchControl" type="text" placeholder="City Name" id="searchInput" name="searchInput" required aria-label="City and State Name or ZipCode">
+                <input class="searchControl" type="text" placeholder="State Name" id="stateInput" name="stateInput" required aria-label="State Name">
                 <input class="searchControl" id="searchBtn" type="submit" value="Search">
             </form>
             
         </div>
         <div class="weatherDescription hidden">
             <h3 id="cityHeader">City</h3>
-            <img class="weatherLogo" alt="logo">
-            <hr width="30%">
+            <img src="climateLogo" class="weatherLogo" alt="logo">
+            <br>
             <span id="temperature"></span>
             <span id="weatherDescriptionHeader"></span>
             <div id="windSpeed" class="bottomDetails"></div>
             <div id="humidity" class="bottomDetails"></div>
         </div>
+        <br>
+        <div class="errorMessage hidden">There was a problem!</div>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
             crossorigin="anonymous"></script>

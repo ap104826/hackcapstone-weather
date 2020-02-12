@@ -4,7 +4,7 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    color: whitesmoke;
+    color:rgb(247, 247, 61);
     text-align: center;
     font-size: 30px;
 }
@@ -17,6 +17,8 @@ body{
 .hidden {
     display: none;
 }
+
+
 
 img {
    height: auto;
@@ -34,11 +36,35 @@ img {
     width: 50%;
     margin: 0 auto;
     margin-top: 30px;
+    background-position: center center
 }
 
 #humidity {
     margin-bottom: 10px;
 }
+
+.errorMessage {
+    color:red;
+    border-style: solid;
+    border-width: thin;
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 30px;
+    background-position: center center
+   border-color: black;
+   
+}
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
 
 
 /* For iphone: */
@@ -55,6 +81,7 @@ img {
         font-size: 50px;
         border-color: aliceblue;
     }
+    
 
     body{
         font-family:'Open Sans';

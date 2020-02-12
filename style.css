@@ -4,7 +4,7 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    color: whitesmoke;
+    color:rgb(247, 247, 61);
     text-align: center;
     font-size: 30px;
 }
@@ -17,6 +17,8 @@ body{
 .hidden {
     display: none;
 }
+
+
 
 img {
    height: auto;
@@ -34,21 +36,24 @@ img {
     width: 50%;
     margin: 0 auto;
     margin-top: 30px;
+    background-position: center center
 }
 
 #humidity {
     margin-bottom: 10px;
 }
 
-.loader {
-    border: 16px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 16px solid #3498db;
-    width: 120px;
-    height: 120px;
-    -webkit-animation: spin 2s linear infinite; /* Safari */
-    animation: spin 2s linear infinite;
-  }
+.errorMessage {
+    color:red;
+    border-style: solid;
+    border-width: thin;
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 30px;
+    background-position: center center
+   border-color: black;
+   
+}
   
   /* Safari */
   @-webkit-keyframes spin {
@@ -76,6 +81,7 @@ img {
         font-size: 50px;
         border-color: aliceblue;
     }
+    
 
     body{
         font-family:'Open Sans';

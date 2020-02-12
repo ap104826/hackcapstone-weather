@@ -4,16 +4,29 @@ let units = 'imperial';
 
 function searchWeather(searchTerm,stateTerm) {
     //start loader
+    $('.errorMessage').addClass('hidden')
+    $('.weatherDescription').addClass('hidden')
+    document.body.style.backgroundImage = 'none'
+    document.body.style.backgroundColor = 'lightsteelblue'
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchTerm},${stateTerm},us&APPID=${appId}&units=${units}`)
     .then(result => {
-        return result.json();
+        if (result.ok) {
+            return result.json();
+        } else {
+            throw new Error('failed')
+        }
+        
     }).then(result => {
         //end loader
         init(result);
     })
-    .catch(error => console.log(error))
+    .catch(error => handleError(error))
     //end loader
 }
+
+function handleError(error) {
+    $('.errorMessage').removeClass('hidden')
+} 
 
 function init(resultFromServer){
     switch(resultFromServer.weather[0].main){

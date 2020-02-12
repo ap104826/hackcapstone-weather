@@ -1,20 +1,18 @@
 let appId = '66adb290f68675fc3135f42f75a4c096';
 let units = 'imperial';
 
-function getSearchMethod(searchTerm) { 
-    if(searchTerm.length === 5 && Number.parseInt(searchTerm)) {
-        return 'zip';
-    } else {
-        return 'q';
-    }
-}
-function searchWeather(searchTerm) {
-    let searchMethod = getSearchMethod(searchTerm);
-    fetch(`https://api.openweathermap.org/data/2.5/weather?${searchMethod}=${searchTerm}&APPID=${appId}&units=${units}`).then(result => {
+
+function searchWeather(searchTerm,stateTerm) {
+    //start loader
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchTerm},${stateTerm},us&APPID=${appId}&units=${units}`)
+    .then(result => {
         return result.json();
     }).then(result => {
+        //end loader
         init(result);
     })
+    .catch(error => console.log(error))
+    //end loader
 }
 
 function init(resultFromServer){
@@ -49,7 +47,7 @@ function init(resultFromServer){
     let cityHeader = $('#cityHeader');
     let weatherIcon = $('.weatherLogo');
     
-    weatherIcon.attr('src', `http://openweathermap.org/img/wn/${resultFromServer.weather[0].icon}@2x.png`);
+    weatherIcon.attr('src', `https://openweathermap.org/img/wn/${resultFromServer.weather[0].icon}@2x.png`);
     weatherDescription.removeClass('hidden')
     let resultDescription = resultFromServer.weather[0].description;
     weatherDescriptionHeader.text(resultDescription.charAt(0).toUpperCase() + resultDescription.slice(1));
@@ -63,12 +61,13 @@ function init(resultFromServer){
 
 $('#weatherForm').on('submit', (event) => {
     event.preventDefault()
+    
     let searchTerm = $('#searchInput').val();
-    if(searchTerm) {
-        searchWeather(searchTerm);
-    }
-})
+    let stateTerm = $('#stateInput').val();
 
+    searchWeather(searchTerm, stateTerm);
+    
+    })
 
 
 

@@ -50,9 +50,8 @@ img {
     width: 30%;
     margin: 0 auto;
     margin-top: 30px;
-    background-position: center center
-   border-color: black;
-   
+    background-position: center center;
+    border-color: black;
 }
   
   /* Safari */
@@ -78,7 +77,7 @@ img {
     and (min-device-width: 320px) 
     and (max-device-width: 1024px){
     .searchControl {
-        font-size: 50px;
+        font-size: 50px;  
         border-color: aliceblue;
     }
     

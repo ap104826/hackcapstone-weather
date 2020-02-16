@@ -6,7 +6,6 @@ function searchWeather(searchTerm,stateTerm) {
     //start loader
     $('.errorMessage').addClass('hidden')
     $('.weatherDescription').addClass('hidden')
-    document.body.style.backgroundImage = 'none'
     document.body.style.backgroundColor = '#2B3E50'
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchTerm},${stateTerm},us&APPID=${appId}&units=${units}`)
     .then(result => {
@@ -29,29 +28,7 @@ function handleError(error) {
 } 
 
 function init(resultFromServer){
-    switch(resultFromServer.weather[0].main){
-        case 'Clear':
-            document.body.style.backgroundImage = 'url("clearx.jpg")';
-            break;
-
-        case 'Clouds':
-                document.body.style.backgroundImage = 'url("cloudy.jpg")';
-                break;
-        case 'Rain':
-        case 'Drizzle':
-        case 'Mist':
-                document.body.style.backgroundImage = 'url("rain.jpg")';
-                break;
-        case 'Thunderstorm':
-                document.body.style.backgroundImage = 'url("storm.jpg")';
-                break;
-        case 'snow':
-                document.body.style.backgroundImage = 'url("snow.jpg")';
-                break;
-        default:
-                document.body.style.backgroundImage = 'url("Color-blue.jpg")';
-                break;
-    }
+   
     let weatherDescription = $('.weatherDescription');
     let weatherDescriptionHeader = $('#weatherDescriptionHeader');
     let temperatureElement = $('#temperature');

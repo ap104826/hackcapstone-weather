@@ -1,10 +1,10 @@
 body{
     font-family:'Open Sans';
-    background-color: lightsteelblue;
+    background-color: #2B3E50;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    color:rgb(247, 247, 61);
+    color:#EBEBEB;
     text-align: center;
     font-size: 30px;
 }
@@ -44,7 +44,7 @@ img {
 }
 
 .errorMessage {
-    color:red;
+    color:#d9534f;
     border-style: solid;
     border-width: thin;
     width: 30%;
@@ -85,11 +85,11 @@ img {
 
     body{
         font-family:'Open Sans';
-        background-color: lightsteelblue;
+        background-color:#2B3E50;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
-        color: whitesmoke;
+        color:#EBEBEB;
         text-align: center;
         font-size: 50px;
     }

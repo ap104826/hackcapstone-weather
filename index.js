@@ -7,7 +7,7 @@ function searchWeather(searchTerm,stateTerm) {
     $('.errorMessage').addClass('hidden')
     $('.weatherDescription').addClass('hidden')
     document.body.style.backgroundImage = 'none'
-    document.body.style.backgroundColor = 'lightsteelblue'
+    document.body.style.backgroundColor = '#2B3E50'
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchTerm},${stateTerm},us&APPID=${appId}&units=${units}`)
     .then(result => {
         if (result.ok) {

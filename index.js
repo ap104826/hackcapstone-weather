@@ -12,19 +12,26 @@ function searchWeather(searchTerm,stateTerm) {
         if (result.ok) {
             return result.json();
         } else {
-            throw new Error('failed')
+            throw new Error('Unable to get weather data for this location. Try again!')
         }
         
     }).then(result => {
         //end loader
         init(result);
     })
-    .catch(error => handleError(error))
+    .catch(error => {
+        if (error.message === 'Failed to fetch') {
+            error.message = 'There was a problem!'
+        }
+        handleError(error)
+    })
     //end loader
 }
 
 function handleError(error) {
-    $('.errorMessage').removeClass('hidden')
+    $('.errorMessage')
+        .text(error.message)
+        .removeClass('hidden')
 } 
 
 function init(resultFromServer){
@@ -49,13 +56,25 @@ function init(resultFromServer){
 
 }
 
+function isStateValid(stateTerm) {
+    return true
+}
+
+function showInvalidStateMessage() {
+    
+}
+
 $('#weatherForm').on('submit', (event) => {
     event.preventDefault()
     
     let searchTerm = $('#searchInput').val();
     let stateTerm = $('#stateInput').val();
-
-    searchWeather(searchTerm, stateTerm);
+    if (isStateValid(stateTerm)){
+        searchWeather(searchTerm, stateTerm);
+    } else {
+        showInvalidStateMessage()
+    }
+    
     
     })
 

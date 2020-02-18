@@ -80,7 +80,7 @@ function isStateValid(stateTerm) {
     //get from the website list of state abbr and match what the user input to that list
     //return true or false
     var states = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NH','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY']  
-    if(states.includes(stateTerm)){
+    if(states.includes(stateTerm).toUpperCase()){
         return true;
     } else {
         return false
@@ -105,7 +105,7 @@ $('#weatherForm').on('submit', (event) => {
     }
     })
 
-
+    $(wireUpHandler);
 
 
 

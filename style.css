@@ -6,7 +6,7 @@ body{
     background-position: center center;
     color:#EBEBEB;
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .searchControl {
@@ -59,26 +59,18 @@ img {
     border-color: black;
 }
   
-  /* Safari */
-  @-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-
-
-  @media only screen and (min-width: 640px) {
-    .col-12 {
-      width: 100%;
-    }
-  }
 @media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px)  { 
+and (min-device-width : 320px) 
+and (max-device-width : 767px) {}
+    .searchControl {
+    font-size: 20px;
+}
+}
+
+  
+@media only screen 
+and (min-width : 768px) 
+and (max-width : 1024px)  { 
     .searchControl {
         font-size: 50px;  
         border-color: aliceblue;
@@ -93,7 +85,7 @@ and (max-device-width : 1024px)  {
         background-position: center center;
         color:#EBEBEB;
         text-align: center;
-        font-size: 50px;
+        font-size: 40px;
     }
 
     img {

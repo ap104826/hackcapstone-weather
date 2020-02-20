@@ -36,18 +36,18 @@ function handleError(error) {
 
 function init(resultFromServer){
    
-    let weatherDescription = $('.weatherDescription');
-    let weatherDescriptionHeader = $('#weatherDescriptionHeader');
-    let temperatureElement = $('#temperature');
-    let humidityElement = $('#humidity');
-    let windspeedElement = $('#windSpeed');
-    let cityHeader = $('#cityHeader');
-    let weatherIcon = $('.weatherLogo');
-    let descriptionElement = $('.description');
+    var weatherDescription = $('.weatherDescription');
+    var weatherDescriptionHeader = $('#weatherDescriptionHeader');
+    var temperatureElement = $('#temperature');
+    var humidityElement = $('#humidity');
+    var windspeedElement = $('#windSpeed');
+    var cityHeader = $('#cityHeader');
+    var weatherIcon = $('.weatherLogo');
+    var descriptionElement = $('.description');
     
     weatherIcon.attr('src', `https://openweathermap.org/img/wn/${resultFromServer.weather[0].icon}@2x.png`);
     weatherDescription.removeClass('hidden')
-    let resultDescription = resultFromServer.weather[0].description;
+    var resultDescription = resultFromServer.weather[0].description;
     weatherDescriptionHeader.text(resultDescription.charAt(0).toUpperCase() + resultDescription.slice(1));
 
     temperatureElement.html('Temperature: ' + Math.floor(resultFromServer.main.temp) + '&#176');
@@ -80,7 +80,7 @@ function isStateValid(stateTerm) {
     //get from the website list of state abbr and match what the user input to that list
     //return true or false
     var states = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NH','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY']  
-    if(states.includes(stateTerm).toUpperCase()){
+    if(states.includes(stateTerm)) {
         return true;
     } else {
         return false
@@ -96,8 +96,8 @@ function showInvalidStateMessage() {
 $('#weatherForm').on('submit', (event) => {
     event.preventDefault()
     
-    let searchTerm = $('#searchInput').val();
-    let stateTerm = $('#stateInput').val();
+    var searchTerm = $('#searchInput').val();
+    var stateTerm = $('#stateInput').val().toUpperCase();
     if (isStateValid(stateTerm)){
         searchWeather(searchTerm, stateTerm);
     } else {

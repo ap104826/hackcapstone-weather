@@ -1,26 +1,32 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <head>
-        
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <link rel="stylesheet" href="style.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" 
-            rel="stylesheet">
-        <script src="https://kit.fontawesome.com/0993bc6ed6.js" crossorigin="anonymous"></script>
-        <title>Rain or Shine</title>
-    </head>
-    <body>
-        <img src="rainorshineicon.jpeg" alt="Rain or Shine Weather App" >
+<html lang="en">
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0993bc6ed6.js" crossorigin="anonymous"></script>
+    <title>Rain or Shine</title>
+</head>
+
+<body>
+    <header>
+        <img src="rainorshineicon.jpeg" alt="Rain or Shine Weather App">
         <!-- <div class="loader"></div> -->
-        <div id= "searchContainer">
+        <div id="searchContainer">
             <h1 class="appTitle">Rain or Shine</h1>
-            <form id="weatherForm">
-                <input class="searchControl" type="text" placeholder="chicago, new york, etc." id="searchInput" name="searchInput" required aria-label="City and State Name or ZipCode">
-                <input class="searchControl" type="text" placeholder="IL, NY, etc." id="stateInput" name="stateInput" required aria-label="State Name">
-                <input class="searchControl" id="searchBtn" type="submit" value="Search">
-            </form>
-            
+    </header>
+    <main>
+        <form id="weatherForm">
+            <input class="searchControl" type="text" placeholder="chicago, new york, etc." id="searchInput"
+                name="searchInput" required aria-label="City and State Name or ZipCode">
+            <input class="searchControl" type="text" placeholder="IL, NY, etc." id="stateInput" name="stateInput"
+                required aria-label="State Name">
+            <input class="searchControl" id="searchBtn" type="submit" value="Search">
+        </form>
+
         </div>
         <section class="weatherDescription hidden">
             <h2 id="cityHeader">City</h2>
@@ -29,14 +35,14 @@
             <span id="weatherDescriptionHeader"></span>
             <div id="windSpeed" class="bottomDetails"></div>
             <div id="humidity" class="bottomDetails"></div>
-            <div id="description" class="description"></div> 
+            <div id="description" class="description"></div>
             <i class="icon fa fa-thermometer-empty" style="font-size: 30px"></i>
         </section>
         <section class="errorMessage hidden"></section>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-            crossorigin="anonymous"></script>
-        <script src= "index.js"></script>
-    </body>
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="index.js"></script>
+    </main>
+</body>
 
 </html>
